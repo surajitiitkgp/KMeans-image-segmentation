@@ -155,7 +155,7 @@ img_arr = img.pixel_array
 #img_arr = cv2.imread("Sample/1.png", 0)
 kmeans = KMeans(K=3)
 plt.imshow(np.array(img_arr), cmap='gray')
-images = kmeans.clusteredImages(img_arr, shape=(320,290))
+images = kmeans.clusteredImages(img_arr, shape=img_arr.shape)
 plt.figure(figsize=(15, 15)) 
 for i in range(len(images)):
     plt.subplot(1, len(images), i+1)
