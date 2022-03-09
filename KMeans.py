@@ -110,7 +110,7 @@ class KMeans:
         if len(image_1d.shape) >1: 
             image_1d = self.convertToGray1D(image_1d)
         ## Randomly k number of points for k-means clustering if centroids are not set
-        points = np.random.choice(image_1d, size=(self.K,1)) if centroids == 'random' else centroids
+        points = np.random.choice(image_1d[image_1d>0], size=(self.K,1)) if centroids == 'random' else centroids
         #points = np.array([np.sum(image1d)/len(image1d), np.sum(image1d)/len(image1d)*2, np.sum(image1d)/len(image1d)*4])
         #points = np.array([math.log(np.sum(image1d),np.sqrt(np.mean(image1d))), np.mean(image1d)*2, np.max(image1d)*0.88])
         print("Initial Controids", points)
